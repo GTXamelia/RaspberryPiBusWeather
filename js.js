@@ -10,8 +10,10 @@ window.onload = function what() {
     var bus = data.results;
     console.log(bus);
 
+    var busResults = [];
     for (var i = 0; i < numberofresults; i++) {
-      console.log(i);
+      var buslocal = bus[i].origin.split(" ")[0] + " " + bus[i].route;
+      console.log(buslocal);
     }
   });
 };
