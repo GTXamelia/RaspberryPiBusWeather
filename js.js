@@ -30,7 +30,22 @@ window.onload = function load() {
 
   $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=2964179&appid=f275187df1683290985e46aaa607ed8e", function (data) {
 
-    console.log(data)
+    var numberofresults = data.cnt;
+    var weatherReports = data.list;
+
+    for (var i = 0; i < numberofresults; i++) {
+
+      if(i!=4444){
+
+        console.log(weatherReports[i].dt_txt);
+        console.log(weatherReports[i].weather[0].icon);
+        console.log("http://openweathermap.org/img/w/" + weatherReports[i].weather[0].icon + ".png");
+      }
+      
+
+    }
+
+    
   });
 };
 
