@@ -1,13 +1,11 @@
 window.onload = function what() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522961&format=json", function (data) {
 
-
     var numberofresults = data.numberofresults;
     var bus = data.results;
 
     var table = document.getElementById("bus1");
     var header = table.createTHead();
-    
 
     for (var i = 0; i < numberofresults; i++) {
       var buslocal = "("+ bus[i].route + ") " + bus[i].origin.split(" ")[0];
@@ -18,7 +16,6 @@ window.onload = function what() {
 
       var row = table.insertRow(i);
 
-      // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
@@ -26,7 +23,6 @@ window.onload = function what() {
       cell1.innerHTML = buslocal;
       cell2.innerHTML = destination;
       cell3.innerHTML = due;
-
 
     }
 
@@ -37,6 +33,5 @@ window.onload = function what() {
     head1.innerHTML = "<b>Bus</b>";
     head2.innerHTML = "<b>Destination</b>";
     head3.innerHTML = "<b>Due</b>";
-
   });
 };
