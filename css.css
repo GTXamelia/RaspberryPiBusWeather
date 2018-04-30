@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+  text-align: center;
+  width:70%;
+  margin: auto;
+}
+
+#title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  color: #FFA500;
+  font-size: 30pt;
+}
+
+#holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFA500;
+  font-size: 20pt;
+}
