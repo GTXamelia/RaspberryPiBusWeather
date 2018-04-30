@@ -43,7 +43,7 @@ window.onload = function what() {
     var header = table.createTHead();
 
     for (var i = 0; i < numberofresults; i++) {
-      var buslocal = "(" + bus[i].route + ") " + bus[i].origin.split(" ")[0];
+      var buslocal = "(" + bus[i].route + ") " + bus[i].destination.split(" ")[0];
       var due = bus[i].duetime;
       var destination = bus[i].destination;
 
