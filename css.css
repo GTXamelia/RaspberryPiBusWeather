@@ -6,9 +6,8 @@ body {
 }
 
 #title {
-  left: 50%;
-  transform: translate(-50%, 10%);
-  color: #FFA500;
+  text-align: left;
+  color: #18946D;
   font-size: 30pt;
 }
 
