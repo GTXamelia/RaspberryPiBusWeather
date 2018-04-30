@@ -2,9 +2,6 @@ window.onload = function what() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522961&format=json", function (data) {
     console.log(data);
 
-
-
-
     var numberofresults = data.numberofresults;
     console.log(numberofresults);
     var bus = data.results;
@@ -13,8 +10,9 @@ window.onload = function what() {
     var busResults = [];
     for (var i = 0; i < numberofresults; i++) {
       var buslocal = bus[i].origin.split(" ")[0] + " " + bus[i].route;
-      var due =  bus[i].duetime;
-      console.log("Bus: " + buslocal + "\nDue: " + due);
+      var due = bus[i].duetime;
+      var destination = bus[i].destination;
+      console.log("Bus: " + buslocal + "\nDue: " + due + "\nDestination: " + destination);
     }
   });
 };
