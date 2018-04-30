@@ -62,7 +62,7 @@ function addRow(i, table, header, bus, numberofresults) {
   function dueFunc(due) {
 
     if (due == "Due") {
-      due = due + " Soon"
+      due = due + " Now"
     } else if (due == 1) {
       due = due + " Minute";
     } else {
