@@ -8,7 +8,7 @@ window.onload = function load() {
     var header = table.createTHead();
 
     for (var i = 0; i < numberofresults; i++) {
-      
+
       addRow(i, table, header, bus, numberofresults);
 
     }
@@ -29,19 +29,6 @@ window.onload = function load() {
   });
 };
 
-function dueFunc(due) {
-
-  if (due == "Due") {
-    due = due + " Soon"
-  } else if (due == 1) {
-    due = due + " Minute";
-  } else {
-    due = due + " Minutes";
-  }
-
-  return due;
-}
-
 function addRow(i, table, header, bus, numberofresults) {
 
   var buslocal = "(" + bus[i].route + ") " + bus[i].origin.split(" ")[0];
@@ -60,7 +47,7 @@ function addRow(i, table, header, bus, numberofresults) {
   cell2.innerHTML = destination;
   cell3.innerHTML = due;
 
-  if (i+1 == numberofresults){
+  if (i + 1 == numberofresults) {
 
     var row = header.insertRow(0);
     var head1 = row.insertCell(0);
@@ -70,5 +57,18 @@ function addRow(i, table, header, bus, numberofresults) {
     head2.innerHTML = "<b>Destination</b>";
     head3.innerHTML = "<b>Due</b>";
 
+  }
+
+  function dueFunc(due) {
+
+    if (due == "Due") {
+      due = due + " Soon"
+    } else if (due == 1) {
+      due = due + " Minute";
+    } else {
+      due = due + " Minutes";
+    }
+
+    return due;
   }
 }
