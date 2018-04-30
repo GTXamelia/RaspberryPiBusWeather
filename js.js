@@ -1,51 +1,4 @@
 window.onload = function load() {
-
-
-
-
-  $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522691&format=json", function (data) {
-    var numberofresults = data.numberofresults;
-    var bus = data.results;
-
-    var table = document.getElementById("bus2");
-    var header = table.createTHead();
-
-    for (var i = 0; i < numberofresults; i++) {
-
-      addRow(i, table, header, bus, numberofresults);
-
-    }
-  });
-
-  $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522691&format=json", function (data) {
-
-    var numberofresults = data.cnt;
-    var weatherReports = data.list;
-
-    var table = document.getElementById("weather");
-    var header = table.createTHead();
-
-    for (var i = 0; i < numberofresults; i++) {
-
-      if (i != 0) {
-
-        var due = bus[i].duetime;
-        var destination = bus[i].destination;
-
-
-        console.log(weatherReports[i].dt_txt);
-        console.log(weatherReports[i].weather[0].icon);
-        console.log("http://openweathermap.org/img/w/" + weatherReports[i].weather[0].icon + ".png");
-      }
-
-
-    }
-  });
-  
-  setInterval ( load, 5000 );
-};
-
-function bus1() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522961&format=json", function (data) {
 
     var numberofresults = data.numberofresults;
@@ -60,7 +13,21 @@ function bus1() {
 
     }
   });
-}
+
+  $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522691&format=json", function (data) {
+    var numberofresults = data.numberofresults;
+    var bus = data.results;
+
+    var table = document.getElementById("bus2");
+    var header = table.createTHead();
+
+    for (var i = 0; i < numberofresults; i++) {
+
+      addRow(i, table, header, bus, numberofresults);
+
+    }
+  });
+};
 
 function addRow(i, table, header, bus, numberofresults) {
 
