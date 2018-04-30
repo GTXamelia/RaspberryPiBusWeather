@@ -5,18 +5,26 @@ body {
 }
 
 #title {
-  position: relative;
   left: 50%;
   transform: translate(-50%, 10%);
   color: #FFA500;
   font-size: 30pt;
 }
 
-#holder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #FFA500;
-  font-size: 20pt;
+#bus1 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#bus1 td {
+  border: 1px solid #CD1C38;
+  text-align: left;
+  padding: 8px;
+}
+
+#bus1 thead {
+  background-color: #CD1C38;
+  color: #18946D;
+  font-size: 150%;
 }
