@@ -13,7 +13,8 @@ window.onload = function what() {
     var busResults = [];
     for (var i = 0; i < numberofresults; i++) {
       var buslocal = bus[i].origin.split(" ")[0] + " " + bus[i].route;
-      console.log(buslocal);
+      var due =  bus[i].duetime;
+      console.log("Bus: " + buslocal + "\nDue: " + due);
     }
   });
 };
