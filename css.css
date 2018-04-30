@@ -1,4 +1,5 @@
 body {
+  background-color: #ECF0F5;
   text-align: center;
   width:70%;
   margin: auto;
@@ -21,9 +22,10 @@ body {
   border: 1px solid #CD1C38;
   text-align: left;
   padding: 8px;
+  background-color: #ffffff;
 }
 
-#bus1 thead {
+#bus1 thead td {
   background-color: #CD1C38;
   color: #18946D;
   font-size: 150%;
