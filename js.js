@@ -27,6 +27,11 @@ window.onload = function load() {
 
     }
   });
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=2964179&appid=f275187df1683290985e46aaa607ed8e", function (data) {
+
+    console.log(data)
+  });
 };
 
 function addRow(i, table, header, bus, numberofresults) {
