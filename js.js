@@ -7,12 +7,22 @@ window.onload = function what() {
     var bus = data.results;
     console.log(bus);
 
-    var busResults = [];
+    var mydiv = document.getElementById("londis");
+    var br = document.createElement("br");
+
     for (var i = 0; i < numberofresults; i++) {
       var buslocal = bus[i].origin.split(" ")[0] + " " + bus[i].route;
       var due = bus[i].duetime;
       var destination = bus[i].destination;
+
       console.log("Bus: " + buslocal + "\nDue: " + due + "\nDestination: " + destination);
+
+      mydiv.appendChild(document.createTextNode("Bus: " + buslocal + "\nDue: " + due + "\nDestination: " + destination));
+
+     
+      
+
     }
+
   });
 };
