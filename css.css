@@ -5,26 +5,31 @@ body {
   margin: auto;
 }
 
+#stop {
+  margin:0 auto;
+}
+
 #title {
   text-align: left;
   color: #18946D;
-  font-size: 30pt;
+  font-size: 250%;
 }
 
-#bus1 {
+#stop table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  float:left;
 }
 
-#bus1 td {
+#stop table td {
   border: 1px solid #CD1C38;
   text-align: left;
   padding: 8px;
   background-color: #ffffff;
 }
 
-#bus1 thead td {
+#stop thead td {
   background-color: #CD1C38;
   color: #18946D;
   font-size: 150%;
