@@ -12,6 +12,14 @@ window.onload = function what() {
       var due = bus[i].duetime;
       var destination = bus[i].destination;
 
+      if (due == "Due") {
+
+      } else if (due == 1) {
+        due = due + " Minute";
+      } else {
+        due = due + " Minutes";
+      }
+
       console.log("Bus: " + buslocal + "\nDue: " + due + "\nDestination: " + destination);
 
       var row = table.insertRow(i);
@@ -46,6 +54,14 @@ window.onload = function what() {
       var buslocal = "(" + bus[i].route + ") " + bus[i].destination.split(" ")[0];
       var due = bus[i].duetime;
       var destination = bus[i].destination;
+
+      if (due == "Due") {
+        due = due + " Soon"
+      } else if (due == 1) {
+        due = due + " Minute";
+      } else {
+        due = due + " Minutes";
+      }
 
       console.log("Bus: " + buslocal + "\nDue: " + due + "\nDestination: " + destination);
 
