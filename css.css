@@ -11,6 +11,26 @@ body {
   font-size: 250%;
 }
 
+#weatherGal table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  float:left;
+}
+
+#weatherGal table td {
+  border: 1px solid #CD1C38;
+  text-align: left;
+  padding: 8px;
+  background-color: #ffffff;
+}
+
+#weatherGal thead td {
+  background-color: #CD1C38;
+  color: #18946D;
+  font-size: 150%;
+}
+
 #WeatherOut h1 {
   text-align: center;
   color: #18946D;

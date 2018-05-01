@@ -28,7 +28,7 @@ function weather() {
     weekWeather(data);
     var days = data.daily.data;
 
-    var date = new Date(today.time * 1000);
+    var date = new Date(days[0].time * 1000);
 
 
 
@@ -43,7 +43,16 @@ function todayWeather(data) {
 }
 
 function weekWeather(data) {
-  
+    var table = document.getElementById("weatherTab");
+    var header = table.createTHead();
+    var row = table.insertRow(0);
+    var row = header.insertRow(0);
+    var head1 = row.insertCell(0);
+    var head2 = row.insertCell(1);
+    var head3 = row.insertCell(2);
+    head1.innerHTML = "<b>Bus</b>";
+    head2.innerHTML = "<b>Destination</b>";
+    head3.innerHTML = "<b>Due</b>";
 }
 
 function convert(degree) {
