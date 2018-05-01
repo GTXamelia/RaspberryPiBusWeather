@@ -5,8 +5,14 @@ body {
   margin: auto;
 }
 
-#title {
+#titleBus {
   text-align: left;
+  color: #18946D;
+  font-size: 250%;
+}
+
+#titleWeather {
+  text-align: center;
   color: #18946D;
   font-size: 250%;
 }
