@@ -24,10 +24,15 @@ function buses() {
 function weather() {
   $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
 
-    var today = data.currently;
+    var today = data.daily.data[0];
     var days = data.daily.data;
-    
-    document.getElementById("WeatherTemp").innerHTML = convert(today.temperature) + "&deg";
+
+    var date = new Date(today.time*1000);
+    console.log(today.time)
+    console.log(date)
+
+    document.getElementById("WeatherTemp").innerHTML = convert(data.currently.temperature) + "&deg";
+    document.getElementById("WeatherDesc").innerHTML = today.summary;
 
     console.log(today)
   });
