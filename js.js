@@ -23,10 +23,27 @@ function buses() {
 
 function weather() {
   $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
-    
+
+    var today = data.currently;
     var days = data.daily.data;
-    console.log(days[0].summary);
+
+    var s = document.getElementById("WeatherTemp");
+    document.getElementById("WeatherTemp").innerHTML = convert(today.temperature) + "&deg";
+
+    console.log(today)
+
+
+    console.log(today);
   });
+}
+
+function convert(degree) {
+  var x;
+
+  x = (degree - 32) * 5 / 9;
+  x = Math.round(x);
+
+  return x;
 }
 
 function bus1() {
@@ -38,8 +55,6 @@ function bus1() {
 
     var table = document.getElementById("bus1");
     var header = table.createTHead();
-
-    console.log(bus.stopid);
 
     for (var i = 0; i < numberofresults; i++) {
 
