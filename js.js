@@ -3,13 +3,16 @@ window.onload = function load() {
 
     var numberofresults = data.numberofresults;
     var bus = data.results;
+    var busid = data.stopid;
 
     var table = document.getElementById("bus1");
     var header = table.createTHead();
 
+    console.log(bus.stopid);
+
     for (var i = 0; i < numberofresults; i++) {
 
-      addRow(i, table, header, bus, numberofresults);
+      addRow(i, table, header, bus, numberofresults, busid);
 
     }
   });
@@ -17,23 +20,31 @@ window.onload = function load() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522691&format=json", function (data) {
     var numberofresults = data.numberofresults;
     var bus = data.results;
+    var busid = data.stopid;
 
     var table = document.getElementById("bus2");
     var header = table.createTHead();
 
     for (var i = 0; i < numberofresults; i++) {
 
-      addRow(i, table, header, bus, numberofresults);
+      addRow(i, table, header, bus, numberofresults, busid);
 
     }
   });
 };
 
-function addRow(i, table, header, bus, numberofresults) {
+function addRow(i, table, header, bus, numberofresults, busid) {
 
-  var buslocal = "(" + bus[i].route + ") " + bus[i].origin.split(" ")[0];
+  if(busid == "522691"){
+    var buslocal = "(" + bus[i].route + ") " + bus[i].destination.split(" ")[0];
+    var destination = bus[i].destination;
+  }else{
+    var buslocal = "(" + bus[i].route + ") " + bus[i].origin.split(" ")[0];
+    var destination = bus[i].destination;
+  }
+  
   var due = bus[i].duetime;
-  var destination = bus[i].destination;
+  
 
   var row = table.insertRow(i);
 
