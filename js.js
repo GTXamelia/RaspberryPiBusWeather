@@ -29,9 +29,14 @@ function weather() {
 
     var date = new Date(days[0].time * 1000);
 
-    console.log(data.daily.data[0].time)
     todayWeather(data);
-    weekWeather(data);
+
+    for (var i = 1; i <= 7; i++) {
+
+      weekWeather(data, i);
+
+    }
+
 
   });
 }
@@ -42,27 +47,29 @@ function todayWeather(data) {
   document.getElementById("WeatherDesc").innerHTML = today.summary;
 }
 
-function weekWeather(data) {
+function weekWeather(data, i) {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-  var table = document.getElementById("weatherTab");
-  var header = table.createTHead();
-  var row = table.insertRow(0);
-  var row = header.insertRow(0);
-  var head1 = row.insertCell(0);
-  var head2 = row.insertCell(1);
-  var head3 = row.insertCell(2);
-  var head4 = row.insertCell(3);
-  var head5 = row.insertCell(4);
-  var head6 = row.insertCell(5);
-  var head7 = row.insertCell(6);
-  head1.innerHTML = "<b>Tomorow</b>";
-  head2.innerHTML = "<b>" + days[new Date(data.daily.data[1].time * 1000).getDay()] + "</b>";
-  head3.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
-  head4.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
-  head5.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
-  head6.innerHTML = "<b>" + days[new Date(data.daily.data[5].time * 1000).getDay()] + "</b>";
-  head7.innerHTML = "<b>" + days[new Date(data.daily.data[6].time * 1000).getDay()] + "</b>";
+  if (i == 7) {
+    var table = document.getElementById("weatherTab");
+    var header = table.createTHead();
+    var row = table.insertRow(0);
+    var row = header.insertRow(0);
+    var head1 = row.insertCell(0);
+    var head2 = row.insertCell(1);
+    var head3 = row.insertCell(2);
+    var head4 = row.insertCell(3);
+    var head5 = row.insertCell(4);
+    var head6 = row.insertCell(5);
+    var head7 = row.insertCell(6);
+    head1.innerHTML = "<b>Tomorow</b>";
+    head2.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
+    head3.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
+    head4.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
+    head5.innerHTML = "<b>" + days[new Date(data.daily.data[5].time * 1000).getDay()] + "</b>";
+    head6.innerHTML = "<b>" + days[new Date(data.daily.data[6].time * 1000).getDay()] + "</b>";
+    head7.innerHTML = "<b>" + days[new Date(data.daily.data[7].time * 1000).getDay()] + "</b>";
+  }
 }
 
 function convert(degree) {
