@@ -27,16 +27,9 @@ function weather() {
 
     var days = data.daily.data;
 
-    var date = new Date(days[0].time * 1000);
-
     todayWeather(data);
 
-    for (var i = 1; i <= 7; i++) {
-
-      weekWeather(data, i);
-
-    }
-
+    weekWeather(data);
 
   });
 }
@@ -47,29 +40,45 @@ function todayWeather(data) {
   document.getElementById("WeatherDesc").innerHTML = today.summary;
 }
 
-function weekWeather(data, i) {
+function weekWeather(data) {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var table = document.getElementById("weatherTab");
+  var header = table.createTHead();
 
-  if (i == 7) {
-    var table = document.getElementById("weatherTab");
-    var header = table.createTHead();
-    var row = table.insertRow(0);
-    var row = header.insertRow(0);
-    var head1 = row.insertCell(0);
-    var head2 = row.insertCell(1);
-    var head3 = row.insertCell(2);
-    var head4 = row.insertCell(3);
-    var head5 = row.insertCell(4);
-    var head6 = row.insertCell(5);
-    var head7 = row.insertCell(6);
-    head1.innerHTML = "<b>Tomorow</b>";
-    head2.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
-    head3.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
-    head4.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
-    head5.innerHTML = "<b>" + days[new Date(data.daily.data[5].time * 1000).getDay()] + "</b>";
-    head6.innerHTML = "<b>" + days[new Date(data.daily.data[6].time * 1000).getDay()] + "</b>";
-    head7.innerHTML = "<b>" + days[new Date(data.daily.data[7].time * 1000).getDay()] + "</b>";
-  }
+  var row = table.insertRow(0);
+
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+
+  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax)/2) + "&deg";
+  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax)/2) + "&deg";
+  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax)/2) + "&deg";
+  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax)/2) + "&deg";
+  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax)/2) + "&deg";
+  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax)/2) + "&deg";
+  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax)/2) + "&deg";
+
+  var row = table.insertRow(0);
+  var row = header.insertRow(0);
+  var head1 = row.insertCell(0);
+  var head2 = row.insertCell(1);
+  var head3 = row.insertCell(2);
+  var head4 = row.insertCell(3);
+  var head5 = row.insertCell(4);
+  var head6 = row.insertCell(5);
+  var head7 = row.insertCell(6);
+  head1.innerHTML = "<b>Tomorow</b>";
+  head2.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
+  head3.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
+  head4.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
+  head5.innerHTML = "<b>" + days[new Date(data.daily.data[5].time * 1000).getDay()] + "</b>";
+  head6.innerHTML = "<b>" + days[new Date(data.daily.data[6].time * 1000).getDay()] + "</b>";
+  head7.innerHTML = "<b>" + days[new Date(data.daily.data[7].time * 1000).getDay()] + "</b>";
 }
 
 function convert(degree) {
