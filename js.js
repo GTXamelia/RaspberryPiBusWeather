@@ -24,14 +24,14 @@ function buses() {
 function weather() {
   $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
 
-    todayWeather(data);
-    weekWeather(data);
+
     var days = data.daily.data;
 
     var date = new Date(days[0].time * 1000);
 
-
-
+    console.log(data.daily.data[0].time)
+    todayWeather(data);
+    weekWeather(data);
 
   });
 }
@@ -43,16 +43,18 @@ function todayWeather(data) {
 }
 
 function weekWeather(data) {
-    var table = document.getElementById("weatherTab");
-    var header = table.createTHead();
-    var row = table.insertRow(0);
-    var row = header.insertRow(0);
-    var head1 = row.insertCell(0);
-    var head2 = row.insertCell(1);
-    var head3 = row.insertCell(2);
-    head1.innerHTML = "<b>Bus</b>";
-    head2.innerHTML = "<b>Destination</b>";
-    head3.innerHTML = "<b>Due</b>";
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  var table = document.getElementById("weatherTab");
+  var header = table.createTHead();
+  var row = table.insertRow(0);
+  var row = header.insertRow(0);
+  var head1 = row.insertCell(0);
+  var head2 = row.insertCell(1);
+  var head3 = row.insertCell(2);
+  head1.innerHTML = "<b>Tomorow</b>";
+  head2.innerHTML = days[new Date(data.daily.data[1].time * 1000).getDay()];
+  head3.innerHTML = "<b>Due</b>";
 }
 
 function convert(degree) {
