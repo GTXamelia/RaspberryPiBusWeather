@@ -1,18 +1,17 @@
 window.onload = function load() {
 
+  buses();
+
   setInterval(function () {
 
-    var myNode = document.getElementById("bus1");
-    myNode.innerHTML = '';
+    var clearBusTable1 = document.getElementById("bus1");
+    clearBusTable1.innerHTML = '';
 
-    var myNode = document.getElementById("bus2");
-    myNode.innerHTML = '';
+    var clearBusTable2 = document.getElementById("bus2");
+    clearBusTable2.innerHTML = '';
 
     buses();
-  }, 3000);
-
-
-
+  }, 30000);
 
 };
 
