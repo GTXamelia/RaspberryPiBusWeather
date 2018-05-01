@@ -3,9 +3,7 @@ window.onload = function load() {
   buses();
   weather();
 
-
-  console.log(navigator.onLine);
-
+  currentDate();
 
   setInterval(function () {
 
@@ -26,6 +24,28 @@ window.onload = function load() {
   }, 300000);
 
 };
+
+function currentDate() {
+  var currentTime = new Date()
+
+  var day = currentTime.getDate()
+
+  if (day.toString().length == 1) {
+    day = "0" + day.toString()
+  }
+
+  var month = currentTime.getMonth() + 1
+
+  if (month.toString().length == 1) {
+    month = "0" + month.toString()
+  }
+
+  var year = currentTime.getFullYear()
+
+  var dateString = day + "/" + month + "/" + year
+
+  console.log(dateString);
+}
 
 function buses() {
   bus1();
