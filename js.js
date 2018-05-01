@@ -15,6 +15,9 @@ window.onload = function load() {
   }, 30000);
 
   setInterval(function () {
+    var clearBusTable1 = document.getElementById("weatherTab");
+    clearBusTable1.innerHTML = '';
+
     weather();
   }, 300000);
 
