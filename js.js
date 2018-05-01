@@ -1,6 +1,7 @@
 window.onload = function load() {
 
   buses();
+  weather();
 
   setInterval(function () {
 
@@ -18,6 +19,14 @@ window.onload = function load() {
 function buses() {
   bus1();
   bus2();
+}
+
+function weather() {
+  $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
+    
+    var days = data.daily.data;
+    console.log(days[0].summary);
+  });
 }
 
 function bus1() {
