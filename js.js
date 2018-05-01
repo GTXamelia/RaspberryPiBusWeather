@@ -1,4 +1,27 @@
 window.onload = function load() {
+
+  setInterval(function () {
+
+    var myNode = document.getElementById("bus1");
+    myNode.innerHTML = '';
+
+    var myNode = document.getElementById("bus2");
+    myNode.innerHTML = '';
+
+    buses();
+  }, 3000);
+
+
+
+
+};
+
+function buses() {
+  bus1();
+  bus2();
+}
+
+function bus1() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522961&format=json", function (data) {
 
     var numberofresults = data.numberofresults;
@@ -16,7 +39,9 @@ window.onload = function load() {
 
     }
   });
+}
 
+function bus2() {
   $.getJSON("https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=522691&format=json", function (data) {
     var numberofresults = data.numberofresults;
     var bus = data.results;
@@ -31,20 +56,20 @@ window.onload = function load() {
 
     }
   });
-};
+}
 
 function addRow(i, table, header, bus, numberofresults, busid) {
 
-  if(busid == "522691"){
+  if (busid == "522691") {
     var buslocal = "(" + bus[i].route + ") " + bus[i].destination.split(" ")[0];
     var destination = bus[i].destination;
-  }else{
+  } else {
     var buslocal = "(" + bus[i].route + ") " + bus[i].origin.split(" ")[0];
     var destination = bus[i].destination;
   }
-  
+
   var due = bus[i].duetime;
-  
+
 
   var row = table.insertRow(i);
 
