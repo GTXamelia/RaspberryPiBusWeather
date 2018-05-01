@@ -5,14 +5,26 @@ body {
   margin: auto;
 }
 
-#titleBus {
-  text-align: left;
+#WeatherOut {
+  text-align: center;
   color: #18946D;
   font-size: 250%;
 }
 
-#titleWeather {
+#WeatherOut h1 {
   text-align: center;
+  color: #18946D;
+  font-size: 150%;
+}
+
+#WeatherOut p {
+  text-align: center;
+  color: #18946D;
+  font-size: 75%;
+}
+
+#titleBus {
+  text-align: left;
   color: #18946D;
   font-size: 250%;
 }
