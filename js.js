@@ -3,6 +3,10 @@ window.onload = function load() {
   buses();
   weather();
 
+
+  console.log(navigator.onLine);
+
+
   setInterval(function () {
 
     var clearBusTable1 = document.getElementById("bus1");
@@ -59,13 +63,13 @@ function weekWeather(data) {
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
 
-  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[1].icon;
-  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[2].icon;
-  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[3].icon;
-  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[4].icon;
-  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[5].icon;
-  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[6].icon;
-  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[7].icon;
+  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[1].icon;
+  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[2].icon;
+  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[3].icon;
+  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[4].icon;
+  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[5].icon;
+  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[6].icon;
+  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[7].icon;
 
   var row = table.insertRow(0);
   var row = header.insertRow(0);
@@ -76,6 +80,7 @@ function weekWeather(data) {
   var head5 = row.insertCell(4);
   var head6 = row.insertCell(5);
   var head7 = row.insertCell(6);
+
   head1.innerHTML = "<b>Tomorow</b>";
   head2.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
   head3.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
