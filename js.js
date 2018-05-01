@@ -14,6 +14,10 @@ window.onload = function load() {
     buses();
   }, 30000);
 
+  setInterval(function () {
+    weather();
+  }, 300000);
+
 };
 
 function buses() {
@@ -23,9 +27,6 @@ function buses() {
 
 function weather() {
   $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
-
-
-    var days = data.daily.data;
 
     todayWeather(data);
 
@@ -55,13 +56,13 @@ function weekWeather(data) {
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
 
-  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax)/2) + "&deg";
-  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax)/2) + "&deg";
-  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax)/2) + "&deg";
-  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax)/2) + "&deg";
-  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax)/2) + "&deg";
-  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax)/2) + "&deg";
-  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax)/2) + "&deg";
+  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[1].icon;
+  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[2].icon;
+  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[3].icon;
+  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[4].icon;
+  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[5].icon;
+  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[6].icon;
+  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax)/2) + "&deg" + "<br>" + data.daily.data[7].icon;
 
   var row = table.insertRow(0);
   var row = header.insertRow(0);
