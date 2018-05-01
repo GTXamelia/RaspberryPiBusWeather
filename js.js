@@ -52,9 +52,17 @@ function weekWeather(data) {
   var head1 = row.insertCell(0);
   var head2 = row.insertCell(1);
   var head3 = row.insertCell(2);
+  var head4 = row.insertCell(2);
+  var head5 = row.insertCell(2);
+  var head6 = row.insertCell(2);
+  var head7 = row.insertCell(2);
   head1.innerHTML = "<b>Tomorow</b>";
   head2.innerHTML = days[new Date(data.daily.data[1].time * 1000).getDay()];
-  head3.innerHTML = "<b>Due</b>";
+  head3.innerHTML = days[new Date(data.daily.data[2].time * 1000).getDay()];
+  head4.innerHTML = days[new Date(data.daily.data[3].time * 1000).getDay()];
+  head5.innerHTML = days[new Date(data.daily.data[4].time * 1000).getDay()];
+  head6.innerHTML = days[new Date(data.daily.data[5].time * 1000).getDay()];
+  head7.innerHTML = days[new Date(data.daily.data[6].time * 1000).getDay()];
 }
 
 function convert(degree) {
