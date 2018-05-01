@@ -26,14 +26,10 @@ function weather() {
 
     var today = data.currently;
     var days = data.daily.data;
-
-    var s = document.getElementById("WeatherTemp");
+    
     document.getElementById("WeatherTemp").innerHTML = convert(today.temperature) + "&deg";
 
     console.log(today)
-
-
-    console.log(today);
   });
 }
 
