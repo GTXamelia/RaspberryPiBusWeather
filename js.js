@@ -57,12 +57,12 @@ function weekWeather(data) {
   var head6 = row.insertCell(5);
   var head7 = row.insertCell(6);
   head1.innerHTML = "<b>Tomorow</b>";
-  head2.innerHTML = days[new Date(data.daily.data[1].time * 1000).getDay()];
-  head3.innerHTML = days[new Date(data.daily.data[2].time * 1000).getDay()];
-  head4.innerHTML = days[new Date(data.daily.data[3].time * 1000).getDay()];
-  head5.innerHTML = days[new Date(data.daily.data[4].time * 1000).getDay()];
-  head6.innerHTML = days[new Date(data.daily.data[5].time * 1000).getDay()];
-  head7.innerHTML = days[new Date(data.daily.data[6].time * 1000).getDay()];
+  head2.innerHTML = "<b>" + days[new Date(data.daily.data[1].time * 1000).getDay()] + "</b>";
+  head3.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
+  head4.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
+  head5.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
+  head6.innerHTML = "<b>" + days[new Date(data.daily.data[5].time * 1000).getDay()] + "</b>";
+  head7.innerHTML = "<b>" + days[new Date(data.daily.data[6].time * 1000).getDay()] + "</b>";
 }
 
 function convert(degree) {
