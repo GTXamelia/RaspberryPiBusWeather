@@ -113,7 +113,7 @@ function weekWeather(data) {
   var head6 = row.insertCell(5);
   var head7 = row.insertCell(6);
 
-  head1.innerHTML = "<b>Tomorow</b>";
+  head1.innerHTML = "<b>Tomorrow</b>";
   head2.innerHTML = "<b>" + days[new Date(data.daily.data[2].time * 1000).getDay()] + "</b>";
   head3.innerHTML = "<b>" + days[new Date(data.daily.data[3].time * 1000).getDay()] + "</b>";
   head4.innerHTML = "<b>" + days[new Date(data.daily.data[4].time * 1000).getDay()] + "</b>";
