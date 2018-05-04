@@ -65,7 +65,7 @@ function buses() {
 }
 
 function weather() {
-  $.getJSON("https://api.darksky.net/forecast/9868cdc2dfbceb36552f1e6d0f6b12dd/53.270668,-9.056791", function (data) {
+  $.getJSON("https://api.darksky.net/forecast/APIKEYHERE/53.270668,-9.056791", function (data) {
 
     todayWeather(data);
 
