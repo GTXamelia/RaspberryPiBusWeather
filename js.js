@@ -95,13 +95,13 @@ function weekWeather(data) {
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
 
-  cell1.innerHTML = convert((data.daily.data[1].temperatureMin + data.daily.data[1].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[1].icon;
-  cell2.innerHTML = convert((data.daily.data[2].temperatureMin + data.daily.data[2].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[2].icon;
-  cell3.innerHTML = convert((data.daily.data[3].temperatureMin + data.daily.data[3].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[3].icon;
-  cell4.innerHTML = convert((data.daily.data[4].temperatureMin + data.daily.data[4].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[4].icon;
-  cell5.innerHTML = convert((data.daily.data[5].temperatureMin + data.daily.data[5].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[5].icon;
-  cell6.innerHTML = convert((data.daily.data[6].temperatureMin + data.daily.data[6].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[6].icon;
-  cell7.innerHTML = convert((data.daily.data[7].temperatureMin + data.daily.data[7].temperatureMax) / 2) + "&deg" + "<br>" + data.daily.data[7].icon;
+  cell1.innerHTML = convert(data.daily.data[1].temperatureMin) + "&deg - " + convert(data.daily.data[1].temperatureMax)  + "&deg" + "<br>" + data.daily.data[1].icon;
+  cell2.innerHTML = convert(data.daily.data[2].temperatureMin) + "&deg - " + convert(data.daily.data[2].temperatureMax)  + "&deg" + "<br>" + data.daily.data[2].icon;
+  cell3.innerHTML = convert(data.daily.data[3].temperatureMin) + "&deg - " + convert(data.daily.data[3].temperatureMax)  + "&deg" + "<br>" + data.daily.data[3].icon;
+  cell4.innerHTML = convert(data.daily.data[4].temperatureMin) + "&deg - " + convert(data.daily.data[4].temperatureMax)  + "&deg" + "<br>" + data.daily.data[4].icon;
+  cell5.innerHTML = convert(data.daily.data[5].temperatureMin) + "&deg - " + convert(data.daily.data[5].temperatureMax)  + "&deg" + "<br>" + data.daily.data[5].icon;
+  cell6.innerHTML = convert(data.daily.data[6].temperatureMin) + "&deg - " + convert(data.daily.data[6].temperatureMax)  + "&deg" + "<br>" + data.daily.data[6].icon;
+  cell7.innerHTML = convert(data.daily.data[7].temperatureMin) + "&deg - " + convert(data.daily.data[7].temperatureMax)  + "&deg" + "<br>" + data.daily.data[7].icon;
 
   var row = table.insertRow(0);
   var row = header.insertRow(0);
